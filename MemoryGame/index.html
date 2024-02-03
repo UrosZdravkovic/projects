@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="gameWrapper">
+        <div class="game">
+            <h1>MEMORY GAME</h1>
+            <div class="startWrapper">
+                <input type="text" placeholder="Username" name="name" id="userName">
+                <button id="startGameBtn">START GAME</button>
+                <div id="timer">00:00</div>
+            </div>
+    
+            <div class="difficultyWrapperBig">
+                <div class="difficultyWrapper">
+                    <input type="radio"  name="difficulty" id="beginner" checked>
+                    <label for="beginner">Beginner</label>
+                </div>
+    
+                <div class="difficultyWrapper">
+                    <input type="radio"  name="difficulty" id="normal">
+                    <label for="normal">Normal</label>
+                </div>
+    
+                <div class="difficultyWrapper">
+                    <input type="radio"  name="difficulty" id="hard">
+                    <label id="labelHard" for="hard">Hard</label>
+                </div>
+    
+                <div class="difficultyWrapper">
+                    <input type="radio"  name="difficulty" id="expert">
+                    <label for="expert">Expert</label>
+                </div>
+            </div>
+    
+            <div class="fieldWrapper"></div>
+        </div>
+    
+        <div class="score">
+            <h3>BOXSCORE</h3>
+            <div class="scoreBox">
+                <input type="radio" name="difficulty1" value="begginer" id="beginnerRadio" class="scoreRadio">                        
+                <label for="beginnerRadio"  class="scoreBtn" >Beginner</label>
+        
+                <input type="radio" name="difficulty1" value="normal" id="normalRadio" class="scoreRadio">
+                <label for="normalRadio" class="scoreBtn">Normal</label>
+        
+                <input type="radio" name="difficulty1" value="hard" id="hardRadio" class="scoreRadio">
+                <label for="hardRadio" class="scoreBtn">Hard</label>
+        
+                <input type="radio" name="difficulty1" value="expert" id="expertRadio" class="scoreRadio">
+                <label for="expertRadio" class="scoreBtn">Expert</label>
+            </div>
+            <div class="resultTable"></div>
+        </div> 
+    </div>
+    <div class="winModal">
+        <h2>Congratulations!</h2>
+        <p id="timerP"></p>
+        <button id="closeModal">Close</button>
+        <button id="newGame">New Game</button>
+    </div>
+
+    <div class="alertModal">
+        <h2>USERNAME NOT VALID</h2>
+
+        <button id="closeAlert">CLOSE</button>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>

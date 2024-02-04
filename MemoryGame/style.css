@@ -210,6 +210,7 @@ h3 {
     height: 100%;
     text-align: center;
     transform: rotateY(180deg);
+    backface-visibility: hidden;
 }
 
 .flipCard {

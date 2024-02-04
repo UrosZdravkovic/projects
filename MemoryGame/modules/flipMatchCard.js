@@ -19,12 +19,14 @@ let createCard = (el) => {
     card.appendChild(back)
     field.appendChild(card);
     cardMatched = 0;
+    timerStarted = false;
 }
 
 // FLIP KARTICE
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockField = false;
+let timerStarted = false;
 let cardMatched = 0;
 
 
@@ -32,31 +34,38 @@ function rotateCard(){
     if(lockField) return
     if(this === firstCard) return;
     this.classList.add('flipCard');
+    if(timerStarted == false){
+        startTimer();
+        timerStarted = true;
+    }
     if(!hasFlippedCard){
         hasFlippedCard = true;
         firstCard = this;
-        startTimer();
         
     } else {
         secondCard = this;
         lockField = true;
         matchCards()
-        if(cardMatched === document.querySelectorAll('.card').length / 2){
-            let winModal = document.querySelector('.winModal');
-            winModal.style.display = 'block'
-            let p = document.querySelector('#timerP');
-            p.innerHTML = `Your time is: ${document.querySelector('#timer').innerHTML}`;
-            winModal.prepend(p);
-            saveLocalStorageScore();
-            stopTimer();
-            console.log('radi');
-            cardMatched = 0;
-
-        }   
+        gameWin();
     }
 }
 
 
+
+function gameWin() {
+    if(cardMatched === document.querySelectorAll('.card').length / 2){
+        let winModal = document.querySelector('.winModal');
+        winModal.style.display = 'block'
+        let p = document.querySelector('#timerP');
+        p.innerHTML = `Your time is: ${document.querySelector('#timer').innerHTML}`;
+        winModal.prepend(p);
+        saveLocalStorageScore();
+        stopTimer();
+        timerStarted = false;
+        cardMatched = 0;
+
+    } 
+}
 
 // PROVERAVANJE DA LI SU OKRENUTE KARTICE JEDNA PREKO DATASET
 function matchCards() {
@@ -96,7 +105,7 @@ function startTimer() {
 
             document.querySelector('#timer').innerHTML = `${formattedM}:${formattedS}`;
         }, 1000);
-    }
+    } 
 }
     
 

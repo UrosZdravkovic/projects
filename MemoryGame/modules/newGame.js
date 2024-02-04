@@ -21,7 +21,6 @@ function newGame(){
                 createCard(el);
                 let cards = document.querySelectorAll('.card');
                 cards.forEach(card => card.addEventListener('click', rotateCard));
-                
             });
             
         }

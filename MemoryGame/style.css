@@ -251,6 +251,11 @@ h3 {
     background-color: #ff9900;
 }
 
+#timerP {
+    color: green;
+}
+
+
 .alertModal {
     background-color: #ffcc00; /* Promenjena boja pozadine */
     color: #1c1c1c; /* Tamnocrvena boja teksta */

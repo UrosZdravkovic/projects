@@ -65,9 +65,9 @@ rooms.forEach(span => {
             korisnik1.getChats(data => {
             chatUserInterface.list.append(chatUserInterface.templateLI(data))
             });
-        } else if (span.innerHTML === 'tests'){
+        } else if (span.innerHTML === '#tests'){
             chatUserInterface.delete();
-            korisnik1.room = '#homeworks'
+            korisnik1.room = '#tests'
             korisnik1.getChats(data => {
             chatUserInterface.list.append(chatUserInterface.templateLI(data))
             });

@@ -79,6 +79,7 @@ class ChatUI {
                         // Dohvatanje referenci na dokumente sa određenim tekstom poruke
                         const querySnapshot = await db.collection('chat')
                             .where('message', '==', data.message)
+                            .where('created_at', '==', data.created_at)
                             .get();
                         // Iteriranje kroz rezultate upita
                         querySnapshot.forEach(async (doc) => {

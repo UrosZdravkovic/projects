@@ -275,3 +275,69 @@ button:hover {
 }
 
 
+@media only screen and (max-width: 610px) {
+    .created_at {
+        display: block;
+        margin-left: 5px;
+    }
+
+    .deleteImg {
+        top: 3px;
+        right: 3px;
+    }
+
+    .roomsContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        gap: 10px;
+    } 
+
+    .buttonContainer {
+        width: 90%;
+    }
+
+    li {
+        max-width: 70%;
+    }
+}
+
+
+@media only screen and (max-width: 510px) {
+
+    li {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+
+    li {
+        max-width: 90%;
+    }
+    img {
+        width: 20px;
+    }
+
+    .mainContainer{
+        max-width: 100%;
+    }
+
+
+}
+
+@media only screen and (max-width: 350px) {
+
+    li {
+        max-width: 95%;
+    }
+
+    .roomsContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+        gap: 10px;
+    } 
+
+   
+}
